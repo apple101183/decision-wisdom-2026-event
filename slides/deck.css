@@ -1,0 +1,119 @@
+/* ONE Dentsu 作品介紹：沿用作品視覺
+   紙＝刊物封面的米白；世界＝dentsu「Innovating to Impact」的冷灰；招牌粗黑橫條；青綠／橘紅／藍紫 */
+:root {
+  --ink: #15171C;
+  --paper: #EFEBE4;
+  --world: #C9CFD9;
+  --soft: #3E4450;
+  --teal: #1D6B70;
+  --red: #C8401C;
+  --blue: #4F58C4;
+  --pale: #F7F6F2;
+}
+body { font-family: 'Noto Sans TC', Arial, sans-serif; color: var(--ink); }
+section { padding: 128px; background: var(--paper); box-sizing: border-box; }
+section.world { background: var(--world); }
+section.ink { background: var(--ink); color: var(--paper); }
+section.teal { background: var(--teal); color: var(--pale); }
+
+.kicker { font-size: 28px; font-weight: 700; letter-spacing: 3px; color: var(--teal); margin: 0 0 20px; }
+.ink .kicker { color: #8FD3D6; }
+.teal .kicker { color: #CDEBEC; }
+h1 { font-family: 'Space Grotesk', 'Noto Sans TC', Arial, sans-serif; font-size: 150px; font-weight: 700; line-height: 1; margin: 0; letter-spacing: -2px; }
+h2 { font-size: 64px; font-weight: 900; line-height: 1.25; margin: 0; }
+h3 { font-size: 36px; font-weight: 700; line-height: 1.35; margin: 0; }
+p { font-size: 32px; line-height: 1.6; margin: 0; }
+.bar { height: 18px; width: 560px; background: var(--ink); margin: 28px 0 36px; }
+.ink .bar { background: var(--paper); }
+.teal .bar { background: var(--pale); }
+.lead { font-size: 44px; font-weight: 700; line-height: 1.45; }
+.muted { color: var(--soft); }
+.ink .muted { color: #BFC6CF; }
+.small { font-size: 26px; line-height: 1.6; }
+
+/* 封面 */
+.cover-grid { display: grid; grid-template-columns: 1000px 520px; gap: 144px; align-items: center; height: 824px; }
+.cover-img { width: 520px; height: 717px; object-fit: cover; box-shadow: 24px 28px 48px rgba(40, 35, 25, 0.28); }
+
+/* 初衷 */
+.quote-big { font-size: 60px; font-weight: 900; line-height: 1.45; }
+.accent-line { font-size: 52px; font-weight: 900; line-height: 1.45; color: #8FD3D6; margin-top: 48px; }
+
+/* 初衷 × 比賽三個目的（顏色沿用刊物三個章節色） */
+.why-h { font-size: 52px; line-height: 1.4; }
+.goals { margin-top: 44px; }
+.goal { display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: center; padding: 22px 0; border-top: 2px solid #2E323B; }
+.gword { font-size: 112px; font-weight: 900; line-height: 1; letter-spacing: 4px; }
+.g1 { color: #C9DE6E; }
+.g2 { color: #F0C4C3; }
+.g3 { color: #8AD0DE; }
+.gtag { font-size: 26px; font-weight: 700; color: #BFC6CF; letter-spacing: 2px; }
+.gmain { font-size: 36px; font-weight: 700; line-height: 1.4; margin-top: 4px; }
+.gsub { font-size: 28px; line-height: 1.5; color: #BFC6CF; margin-top: 4px; }
+
+/* 署名：右下角 */
+.byline { position: absolute; right: 128px; bottom: 64px; width: 380px; display: flex; align-items: center; justify-content: flex-end; gap: 18px; }
+.byline-face { width: 80px; height: 80px; border-radius: 40px; object-fit: cover; border: 3px solid #F0C4C3; }
+.byline-role { font-size: 24px; line-height: 1.3; color: #BFC6CF; }
+.byline-name { font-family: 'Space Grotesk', 'Noto Sans TC', Arial, sans-serif; font-size: 34px; font-weight: 700; line-height: 1.2; }
+
+/* 流程 */
+.flow { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 20px; margin-top: 56px; }
+.step { background: var(--pale); border-top: 10px solid var(--ink); padding: 28px 24px; }
+.step .n { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 30px; font-weight: 700; color: var(--teal); }
+.step h3 { margin-top: 8px; }
+.step p { font-size: 26px; color: var(--soft); margin-top: 8px; line-height: 1.5; }
+.facts { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 40px; }
+.fact { border-left: 8px solid var(--teal); padding: 6px 0 6px 24px; }
+.fact p { font-size: 28px; }
+
+/* 影片頁 */
+.vid { display: grid; grid-template-columns: 560px 1040px; gap: 64px; align-items: center; height: 824px; }
+.vid ul { margin: 0; padding-left: 36px; }
+.vid li { font-size: 30px; line-height: 1.55; margin-bottom: 22px; color: var(--soft); }
+.vid .num { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 30px; font-weight: 700; color: var(--teal); margin: 0 0 12px; }
+.screen { width: 1040px; height: 585px; object-fit: contain; background: var(--ink); border: 3px solid var(--ink); box-shadow: 0 30px 60px rgba(20, 25, 40, 0.30); }
+
+/* 數字 */
+.nums { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 24px; margin-top: 48px; }
+.big { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 120px; font-weight: 700; line-height: 1; color: var(--teal); margin: 0; }
+.nums p.label { font-size: 28px; margin-top: 12px; }
+.fixes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 56px; }
+.fix { background: var(--pale); padding: 28px; }
+.fix p { font-size: 26px; line-height: 1.55; }
+.fix .before { color: var(--red); font-weight: 700; margin-bottom: 10px; }
+
+/* 資安 */
+.cards3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 48px; }
+.card { background: var(--pale); border-top: 10px solid var(--teal); padding: 32px; }
+.card p { font-size: 28px; margin-top: 12px; line-height: 1.55; color: var(--soft); }
+
+/* 願景 */
+.qs { margin: 40px 0 0; padding-left: 36px; }
+.qs li { font-size: 34px; line-height: 1.6; margin-bottom: 14px; }
+
+/* 動態：抵達時依序淡入上升（最終樣子就是一般規則） */
+.rise { animation: rise 0.6s ease-out both; animation-delay: calc(var(--i, 0) * 140ms); }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.grow { animation: grow 0.7s ease-out both; animation-delay: calc(var(--i, 0) * 140ms); transform-origin: 0 50%; }
+@keyframes grow { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+
+/* 洞察：書裡的對立觀點 */
+.tensions { margin-top: 40px; display: grid; gap: 20px; }
+.tension { display: grid; grid-template-columns: 1fr 300px 1fr; align-items: center; background: var(--pale); padding: 24px 36px; }
+.tension .side:first-child { padding-right: 32px; }
+.tension .side:last-child { text-align: right; padding-left: 32px; }
+.tq { font-size: 29px; font-weight: 700; line-height: 1.45; }
+.tw { font-size: 22px; color: var(--soft); margin-top: 6px; }
+.tvs { text-align: center; font-size: 28px; font-weight: 900; line-height: 1.35; color: var(--red); border-left: 3px solid var(--world); border-right: 3px solid var(--world); padding: 6px 0; }
+.tconc { margin-top: 36px; font-size: 34px; font-weight: 700; line-height: 1.5; border-left: 10px solid var(--ink); padding-left: 28px; }
+
+/* 報到通知：AI 分身與六邊形 */
+.notice2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 36px; }
+.ncard { background: var(--pale); border-top: 10px solid var(--ink); padding: 30px 32px; display: grid; grid-template-columns: 290px 1fr; gap: 30px; align-items: start; }
+.nshot { width: 290px; height: 318px; object-fit: cover; object-position: top; background: #fff; border: 2px solid var(--ink); box-shadow: 0 14px 28px rgba(20, 25, 40, 0.18); }
+.ntag { display: inline-block; font-size: 24px; font-weight: 700; color: var(--pale); background: var(--red); padding: 2px 14px; margin-bottom: 14px; }
+.ntag.t2 { background: var(--teal); }
+.nfrom { font-size: 26px; line-height: 1.6; color: var(--soft); margin-top: 14px; }
+.nwhy { font-size: 26px; line-height: 1.55; font-weight: 700; margin-top: 18px; padding-top: 16px; border-top: 2px solid #D9D4CB; }
+.nwhy b { display: block; font-size: 22px; color: var(--teal); letter-spacing: 2px; margin-bottom: 4px; }

@@ -1,0 +1,17 @@
+/* 網頁版簡報：每頁 1920×1080，依視窗等比縮放 */
+html, body { margin: 0; height: 100%; background: #0d0f13; overflow: hidden; }
+#deck { position: absolute; left: 50%; top: 50%; width: 1920px; height: 1080px; transform-origin: 0 0; }
+#deck > section { position: absolute; inset: 0; width: 1920px; height: 1080px; display: none; overflow: hidden; }
+#deck > section.on { display: block; }
+#deck aside { display: none; }
+#deck video.screen { display: block; }
+.golink { color: #8FD3D6; text-decoration: underline; text-underline-offset: 6px; }
+.bar-ui { position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); display: flex; gap: 8px; align-items: center;
+  background: rgba(21, 23, 28, .86); color: #EFEBE4; padding: 6px 10px; border-radius: 999px; font: 14px/1 "Noto Sans TC", sans-serif; z-index: 5; }
+.bar-ui button, .bar-ui a { font: inherit; color: inherit; background: transparent; border: 1px solid rgba(239,235,228,.35); border-radius: 999px; padding: 7px 12px; cursor: pointer; text-decoration: none; }
+.bar-ui button:hover, .bar-ui a:hover, .bar-ui button[aria-pressed="true"] { background: #EFEBE4; color: #15171C; }
+.bar-ui #count { min-width: 4.5em; text-align: center; }
+.bar-ui .play { border-color: #8FD3D6; color: #8FD3D6; }
+#note { position: fixed; left: 50%; bottom: 64px; transform: translateX(-50%); width: min(880px, 92vw); max-height: 34vh; overflow: auto;
+  background: rgba(247, 246, 242, .97); color: #15171C; font: 16px/1.75 "Noto Sans TC", sans-serif; padding: 14px 18px; border-left: 6px solid #1D6B70; z-index: 5; }
+@media (prefers-reduced-motion: reduce) { #deck .rise, #deck .grow { animation: none; } }
