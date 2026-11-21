@@ -1,0 +1,132 @@
+/* 書房：沿用《決策智慧 2026》內頁的版面語彙
+   紙紋底、章節色塊（People 萊姆綠／Model 粉紅／AI 水藍）、超大淡色引號、頁眉「: Model」、首字放大、章節黑底圖 */
+body.reader {
+  background: #efe9df url("../img/paper.jpg") center / cover fixed;
+  --ch: #d8d4cb; --ch-d: #1d1d1b;
+}
+body.reader[data-ch="People"] { --ch: #cfe07a; --ch-d: #2f5f37; }
+body.reader[data-ch="Model"]  { --ch: #f0c4c3; --ch-d: #b8423e; }
+body.reader[data-ch="AI"]     { --ch: #8ad0de; --ch-d: #1f6670; }
+body.reader footer { max-width: 1180px; }
+
+.progress { position: fixed; top: 0; left: 0; right: 0; height: 4px; z-index: 5; }
+.progress span { display: block; height: 100%; width: 0; background: var(--ch-d); }
+.read-top { position: relative; z-index: 2; max-width: 1180px; margin: 0 auto; padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: baseline; }
+.read-home { font-weight: 800; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
+.read-where { font-size: .85rem; color: var(--muted); }
+.run { font-family: "Courier New", monospace; font-weight: 700; letter-spacing: .04em; }
+
+/* ---------- 文章頁：左色塊、右內文（像原刊跨頁） ---------- */
+.spread { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr; }
+@media (min-width: 980px) { .spread { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); } }
+
+.opener { background: var(--ch); position: relative; overflow: hidden; padding: 2rem 1.6rem 2.4rem; display: flex; flex-direction: column; }
+@media (min-width: 980px) { .opener { position: sticky; top: 0; height: 100vh; padding: 3rem 2.6rem; } }
+.opener::after { content: "\201C"; position: absolute; right: -.05em; bottom: -.42em; font: 900 22rem/1 Georgia, serif; color: rgba(255, 255, 255, .45); pointer-events: none; }
+.opener .run { font-size: .85rem; color: var(--ch-d); }
+.opener h1 { font-size: clamp(1.6rem, 3.2vw, 2.35rem); line-height: 1.35; margin: 1rem 0 0; font-weight: 800; word-break: keep-all; overflow-wrap: anywhere; text-wrap: balance; position: relative; z-index: 1; }
+.opener .by { margin: 1.4rem 0 0; font-size: .9rem; line-height: 1.7; position: relative; z-index: 1; }
+.opener .by b { display: block; }
+.opener .dek { margin-top: auto; padding-top: 2rem; font-size: 1.05rem; font-weight: 700; line-height: 1.8; position: relative; z-index: 1; }
+.opener .meta { color: var(--ink); opacity: .7; position: relative; z-index: 1; }
+
+.pages { padding: 1.8rem 1.4rem 3rem; min-width: 0; }
+@media (min-width: 980px) { .pages { padding: 2.6rem 3.4rem 4rem; } }
+.pages .head { display: flex; justify-content: flex-end; align-items: center; gap: .6rem; margin-bottom: 1.4rem; }
+.pages .head .run { font-size: .9rem; }
+.pages .head .pg { background: var(--ch); color: var(--ink); font-weight: 800; font-size: .8rem; padding: .25rem .55rem; }
+.read-jump a { color: var(--ch-d); font-weight: 700; }
+.read-toc { background: rgba(255, 255, 255, .6); border-left: 4px solid var(--ch); padding: .6rem 1rem; margin: 0 0 1.8rem; }
+.read-toc summary { cursor: pointer; font-weight: 700; }
+.read-toc ol { margin: .5rem 0 0; padding-left: 1.2rem; }
+.read-toc li.h3 { margin-left: 1rem; font-size: .92rem; }
+.read-toc a { color: var(--ink); }
+
+.read-body { font-size: 1.06rem; line-height: 2; }
+.read-body p { margin: 0 0 1.1em; }
+.read-body > p:first-of-type::first-letter { float: left; font-size: 3.4em; line-height: 1; font-weight: 800; margin: .08em .12em 0 0; color: var(--ink); }
+.read-body h2 { font-size: 1.35rem; color: var(--ch-d); margin: 2.4rem 0 .8rem; line-height: 1.5; }
+.read-body h3 { font-size: 1.12rem; margin: 1.8rem 0 .6rem; padding-left: .7rem; border-left: 5px solid var(--ch-d); line-height: 1.5; }
+.read-body h4 { font-size: 1rem; margin: 1.4rem 0 .4rem; color: var(--ch-d); }
+.read-body .pull { font-size: 1.15rem; font-weight: 700; line-height: 1.8; color: var(--ch-d); position: relative; padding: .4rem 0 .4rem 2.6rem; }
+.read-body .pull::before { content: "\201C"; position: absolute; left: 0; top: -.3rem; font: 900 3.4rem/1 Georgia, serif; color: var(--ch); }
+.read-body .cap { font-size: .85rem; color: var(--muted); background: rgba(255, 255, 255, .55); padding: .5rem .8rem; line-height: 1.6; }
+.read-body .cap span { display: inline-block; font-size: .72rem; font-weight: 700; color: var(--ink); background: var(--ch); padding: 0 .4rem; margin-right: .5rem; }
+.read-body .hit { background: linear-gradient(transparent 55%, color-mix(in srgb, var(--ch) 75%, transparent) 55%); scroll-margin-top: 30vh; }
+
+.read-notes { font-size: .78rem; color: var(--muted); margin-top: 3rem; }
+.read-notes::before { content: "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"; display: block; letter-spacing: .05em; color: #9b958a; overflow: hidden; white-space: nowrap; margin-bottom: .6rem; }
+.read-notes h2 { font-size: .9rem; margin: 0 0 .4rem; color: var(--ink); }
+.read-notes ol { padding-left: 1.4rem; }
+.read-notes li { overflow-wrap: anywhere; }
+.read-icon { width: 120px; display: block; margin: 2.5rem auto 0; opacity: .9; }
+.read-nav { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; padding-top: 1rem; border-top: 2px solid var(--ink); font-size: .9rem; }
+.read-nav a { max-width: 45%; color: var(--ink); }
+
+/* ---------- 書房目錄：章節黑底圖＋篇目 ---------- */
+.shelf { max-width: 1180px; margin: 0 auto; padding: 1rem 1.25rem 3rem; }
+.shelf-intro h1 { font-size: clamp(2rem, 6vw, 3.2rem); margin: .2rem 0 0; }
+.shelf-intro .bar { max-width: 360px; }
+.shelf-intro p { max-width: 36rem; }
+.chapter { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 2.4rem; background: rgba(255, 255, 255, .5); }
+@media (min-width: 860px) { .chapter { grid-template-columns: 320px 1fr; } }
+.chapter-card { background: #000; color: #fff; position: relative; min-height: 220px; overflow: hidden; display: flex; align-items: flex-end; }
+.chapter-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: .9; }
+.chapter-card .label { position: relative; z-index: 1; padding: 1rem 1.2rem; display: flex; align-items: baseline; gap: .8rem; }
+.chapter-card .num { background: var(--c); color: #000; font: 800 1.6rem/1 "Courier New", monospace; padding: .3rem .5rem; }
+.chapter-card .name { font: 700 2rem/1 "Courier New", monospace; letter-spacing: .04em; }
+.chapter-list { list-style: none; margin: 0; padding: 1rem 1.4rem; border-top: 8px solid var(--c); }
+@media (min-width: 860px) { .chapter-list { border-top: 0; border-left: 8px solid var(--c); } }
+.chapter-list li { padding: .6rem 0; border-bottom: 1px solid rgba(0, 0, 0, .08); }
+.chapter-list a { color: var(--ink); font-weight: 700; text-decoration: none; }
+.chapter-list a:hover { text-decoration: underline; }
+.chapter-list span { display: block; color: var(--muted); font-size: .82rem; }
+
+/* 遊戲中的文章連結 */
+a.to-article { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a.to-article::after { content: " ↗"; font-size: .85em; }
+a.to-article:hover { color: var(--accent-d); }
+
+/* ---------- 遊戲內閱讀面板 ---------- */
+#drawer { position: fixed; inset: 0; z-index: 30; --ch: #d8d4cb; --ch-d: #1d1d1b; }
+#drawer[data-ch="People"] { --ch: #cfe07a; --ch-d: #2f5f37; }
+#drawer[data-ch="Model"]  { --ch: #f0c4c3; --ch-d: #b8423e; }
+#drawer[data-ch="AI"]     { --ch: #8ad0de; --ch-d: #1f6670; }
+.drawer-backdrop { position: absolute; inset: 0; background: rgba(20, 22, 28, .5); }
+.drawer-panel { position: absolute; top: 0; right: 0; bottom: 0; width: min(640px, 100%); overflow-y: auto; background: #efe9df url("../img/paper.jpg") center / cover; box-shadow: -18px 0 40px rgba(0,0,0,.3); }
+@media (prefers-reduced-motion: no-preference) { .drawer-panel { animation: slidein .35s ease both; } @keyframes slidein { from { transform: translateX(40px); opacity: 0; } to { transform: none; opacity: 1; } } }
+.drawer-bar { position: sticky; top: 0; z-index: 3; display: flex; justify-content: space-between; align-items: center; gap: .8rem; padding: .7rem 1rem; background: rgba(239, 233, 223, .96); border-bottom: 1px solid rgba(0,0,0,.1); }
+.drawer-bar .btn { padding: .45rem .9rem; font-size: .9rem; }
+.drawer-full { font-size: .85rem; color: var(--ink); }
+.drawer-opener.opener { position: relative; height: auto; padding: 1.6rem 1.6rem 1.8rem; }
+.drawer-opener.opener::after { font-size: 14rem; }
+.drawer-opener .dek { margin-top: 1.4rem; padding-top: 0; }
+#drawer .pages { padding: 1.4rem 1.6rem 2.5rem; }
+.feedback { margin-top: 2.5rem; padding: 1.2rem 1.3rem; background: #fff; border-top: 8px solid var(--ch); }
+.fb-q { font-size: 1.1rem; font-weight: 800; margin: 0 0 .4rem; }
+body.drawer-open { overflow: hidden; }
+.reads { padding-left: 1.2rem; }
+.reads li { margin: .5rem 0; line-height: 1.7; }
+.reads b { display: inline-block; min-width: 4rem; margin-right: .3rem; color: var(--accent-d); }
+
+/* 面板頂端：永遠看得到是哪一篇、誰寫的 */
+.drawer-bar { display: grid; grid-template-columns: auto 1fr auto; gap: .8rem; align-items: center; border-bottom: 4px solid var(--ch); }
+.drawer-which { min-width: 0; line-height: 1.35; }
+.drawer-which b { display: block; font-size: .92rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.drawer-which span { display: block; font-size: .76rem; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 560px) { .drawer-bar { grid-template-columns: 1fr auto; } .drawer-which { grid-column: 1 / -1; grid-row: 2; } }
+
+/* 遊戲中引用的這一段：整段淡黃底＋左側章節色粗線＋標籤 */
+.read-body .hit { position: relative; background: #fff6cc; box-shadow: -8px 0 0 var(--ch-d); padding: .6em .8em .6em .9em; margin-top: 2.2em; border-radius: 0 4px 4px 0; scroll-margin-top: 35vh; }
+.read-body .hit::before { content: "遊戲中引用的這一段"; position: absolute; left: -8px; top: -1.9em; font-size: .72rem; font-weight: 800; letter-spacing: .05em; color: #fff; background: var(--ch-d); padding: .15em .6em; border-radius: 3px 3px 0 0; line-height: 1.5; }
+.read-body h2.hit, .read-body h3.hit { border-left: 0; padding-left: .9em; }
+.read-body > p.hit:first-of-type::first-letter { float: none; font-size: inherit; margin: 0; }
+
+/* 原刊圖片：單張滿版，多張並排（手機改兩欄） */
+.read-body .art-fig { margin: 1.4rem 0 .4rem; display: grid; gap: .5rem; align-items: start; }
+.read-body .art-fig.n2 { grid-template-columns: 1fr 1fr; }
+.read-body .art-fig.n3 { grid-template-columns: repeat(3, 1fr); }
+.read-body .art-fig.n4 { grid-template-columns: repeat(2, 1fr); }
+.read-body .art-fig img { width: 100%; height: auto; display: block; background: #fff; }
+@media (max-width: 599px) { .read-body .art-fig.n3 { grid-template-columns: 1fr 1fr; } }
+.read-body .art-fig + .cap { margin-top: 0; }
