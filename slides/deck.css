@@ -142,7 +142,10 @@ p { font-size: 32px; line-height: 1.6; margin: 0; }
 .strip span { color: #B5AFA4; margin: 0 10px; }
 
 /* 製作歷程 1：審題 */
-.brief3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 40px; }
+.brief3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 32px; }
+#brief .tconc { margin-top: 26px; font-size: 30px; }
+#brief .bcol { padding: 22px 28px; }
+#brief .bcol li { margin-bottom: 6px; }
 .bcol { background: var(--pale); border-top: 10px solid var(--ink); padding: 26px 30px; display: flex; flex-direction: column; }
 .bn { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 28px; font-weight: 700; color: var(--teal); }
 .bcol h3 { margin-top: 4px; }
