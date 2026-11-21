@@ -153,3 +153,14 @@ p { font-size: 32px; line-height: 1.6; margin: 0; }
 .bcol li { font-size: 24px; line-height: 1.5; color: var(--soft); margin-bottom: 10px; }
 .bcol li b { color: var(--ink); }
 .bout { margin-top: auto; padding-top: 14px; border-top: 2px solid #D9D4CB; font-size: 24px; line-height: 1.5; font-weight: 700; color: var(--red); }
+
+/* 製作歷程 3：巧思與難度 */
+.craft6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+.cc { background: var(--pale); border-top: 8px solid var(--ink); padding: 26px 28px; }
+.cc h3 { font-size: 32px; }
+.cc p { font-size: 24px; line-height: 1.5; margin-top: 12px; display: grid; grid-template-columns: 34px 1fr; gap: 8px; }
+.cc p b { font-size: 18px; color: var(--pale); text-align: center; height: 28px; line-height: 28px; margin-top: 2px; }
+.cc .hard { color: var(--soft); }
+.cc .hard b { background: var(--red); }
+.cc .how { color: var(--ink); font-weight: 700; }
+.cc .how b { background: var(--teal); }
