@@ -164,3 +164,22 @@ p { font-size: 32px; line-height: 1.6; margin: 0; }
 .cc .hard b { background: var(--red); }
 .cc .how { color: var(--ink); font-weight: 700; }
 .cc .how b { background: var(--teal); }
+
+/* 製作歷程 4：背後的把關（流程架構圖） */
+.pipe { display: grid; grid-template-columns: 1fr 44px 1fr 44px 1fr 44px 1fr; align-items: stretch; margin-top: 34px; }
+.stage { background: var(--pale); border-top: 10px solid var(--ink); padding: 18px 22px; }
+.stage.s-me { border-top-color: var(--red); }
+.stage.s-ai { border-top-color: var(--teal); }
+.stage.s-sec { border-top-color: var(--blue); }
+.sn { font-family: 'Space Grotesk', 'Noto Sans TC', Arial, sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 1px; color: var(--soft); }
+.stage h3 { font-size: 30px; margin-top: 2px; }
+.stage ul { margin: 10px 0 0; padding-left: 22px; }
+.stage li { font-size: 23px; line-height: 1.45; color: var(--soft); margin-bottom: 4px; }
+.arr { align-self: center; text-align: center; font-size: 38px; font-weight: 900; color: var(--ink); }
+.loop { margin-top: 16px; padding: 12px 20px; border: 2px dashed var(--red); font-size: 25px; font-weight: 700; color: var(--red); }
+.loop span { font-size: 28px; margin-right: 10px; }
+.asks { margin-top: 20px; background: var(--ink); color: var(--paper); padding: 18px 26px; }
+.ask-t { font-size: 24px; font-weight: 900; color: #8FD3D6; }
+.ask-g { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 32px; margin-top: 8px; }
+.ask-g p { font-size: 23px; line-height: 1.45; }
+.ask-g b { display: inline-block; font-size: 16px; color: var(--ink); background: #8FD3D6; padding: 0 8px; margin-right: 10px; vertical-align: 2px; }
