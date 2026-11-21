@@ -1,6 +1,6 @@
 // 書房：目錄頁與文章頁（read.html?id=a12&q=引文）
 import { ARTICLES } from './data.js';
-import { esc, CHAPTERS, articleParts } from './reader-core.js';
+import { esc, CHAPTERS, articleParts, keepNames } from './reader-core.js';
 
 const $a = document.getElementById('article');
 const IDS = Object.keys(ARTICLES);
@@ -28,6 +28,7 @@ function shelf() {
           <span>${esc(ARTICLES[k].author)}・p.${esc(ARTICLES[k].pages)}</span></li>`).join('')}</ol>
       </section>`;
     }).join('')}`;
+  keepNames($a);
 }
 
 async function article() {
@@ -52,6 +53,7 @@ async function article() {
         ${next ? `<a href="read.html?id=${next}">${esc(ARTICLES[next].title)} →</a>` : '<span></span>'}
       </nav>
     </div>`;
+  keepNames($a);
   const hit = $a.querySelector('.hit');
   if (hit) {
     hit.scrollIntoView({ block: 'center' });

@@ -3,7 +3,7 @@ import {
 } from './data.js';
 import { mountDecor } from './decor.js';
 import { makeAvatar, avatarSVG } from './avatar.js';
-import { articleParts } from './reader-core.js';
+import { articleParts, keepNames } from './reader-core.js';
 import { SKILLS, freshStats, applyGain, RULES, hexSVG, gainText, promoCheck } from './skills.js';
 
 mountDecor(document.getElementById('decor'));
@@ -65,6 +65,7 @@ function render(html, accent = 'people', { bar = true } = {}) {
   // 主視覺的招牌：每個標題下方一條粗黑橫條
   const h = $stage.querySelector('h2');
   if (bar && h) h.insertAdjacentHTML('afterend', '<span class="bar" aria-hidden="true"></span>');
+  keepNames($stage);
   $stage.focus({ preventScroll: true });
   window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
 }
@@ -179,6 +180,7 @@ function renderSide() {
       <h3>同一天報到的同梯<small>（模擬）</small></h3>
       <ul class="cohort">${rows}</ul>
     </div>`;
+  keepNames($side);
 }
 
 // ---------- 遊戲內的閱讀面板 ----------
@@ -223,6 +225,7 @@ async function openReader(id, q) {
         </div>
       </div>
     </section>`;
+  keepNames($drawer);
   $drawer.hidden = false;
   document.body.classList.add('drawer-open');
   const panel = $drawer.querySelector('.drawer-panel');
@@ -360,6 +363,7 @@ function notice() {
       </section>
       <div class="nt-foot"><button class="btn primary" id="ok">下一步：你的 AI 時代能力</button></div>
     </div>`;
+  keepNames(wrap);
   document.body.appendChild(wrap);
   const ok = wrap.querySelector('#ok');
   const panel = wrap.querySelector('.notice');

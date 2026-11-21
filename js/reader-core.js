@@ -1,5 +1,5 @@
 // 文章內容的共用模組：書房頁（read.html）與遊戲內的閱讀面板都用它
-import { ARTICLES } from './data.js';
+import { ARTICLES, BRANDS } from './data.js';
 
 export const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const norm = (s) => String(s).replace(/[\s　「」『』，。、：；！？（）()．.,:;!?"'‘’“”—–-]/g, '');
@@ -64,4 +64,25 @@ export async function articleParts(id, q = '') {
     notes: notes.length ? `<section class="read-notes"><h2>註解</h2><ol>${notes.map((n) => `<li>${esc(n.text)}</li>`).join('')}</ol></section>` : '',
     icon: `<img class="read-icon" src="${ICONS[iconIdx]}" alt="" aria-hidden="true">`,
   };
+}
+
+// 專有名詞不斷行：dentsu X、Taiwan Dentsu、People Model 這類由多個字組成的名字，整個包成不可拆的單位
+const NAMES = [...new Set([...BRANDS.map((b) => b.name), 'ONE Dentsu', 'People Model', 'Trent Agnew', 'Make Every Impression Count'])]
+  .filter((n) => n.includes(' ')).sort((a, b) => b.length - a.length);
+const NAME_RE = new RegExp(`(${NAMES.join('|')})`); // 名稱裡沒有正規表示式的特殊字元
+export function keepNames(root) {
+  if (!root) return;
+  const walker = document.createTreeWalker(root, 4 /* SHOW_TEXT */, {
+    acceptNode: (n) => (n.parentElement.closest('script, style, svg, .nw') || !NAME_RE.test(n.data) ? 2 /* REJECT */ : 1 /* ACCEPT */),
+  });
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach((n) => {
+    const frag = document.createDocumentFragment();
+    n.data.split(new RegExp(NAME_RE.source, 'g')).forEach((part, i) => {
+      if (!part) return;
+      if (i % 2) { const sp = document.createElement('span'); sp.className = 'nw'; sp.textContent = part; frag.appendChild(sp); } else frag.appendChild(document.createTextNode(part));
+    });
+    n.replaceWith(frag);
+  });
 }
