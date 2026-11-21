@@ -154,15 +154,15 @@ p { font-size: 32px; line-height: 1.6; margin: 0; }
 .bcol li b { color: var(--ink); }
 .bout { margin-top: auto; padding-top: 14px; border-top: 2px solid #D9D4CB; font-size: 24px; line-height: 1.5; font-weight: 700; color: var(--red); }
 
-/* 製作歷程 3：巧思與難度 */
-.craft6 { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: auto; column-gap: 24px; row-gap: 24px; margin-top: 36px; }
-.cc { background: var(--pale); border-top: 8px solid var(--ink); padding: 20px 26px; display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 12px; align-content: start; }
-.cc h3 { font-size: 30px; }
-.cc p { display: block; font-size: 23px; line-height: 1.45; margin-top: 0; }
-.cc p b { display: block; width: fit-content; font-size: 18px; letter-spacing: 1px; color: var(--pale); padding: 1px 10px; margin-bottom: 4px; }
-.cc .hard { color: var(--soft); }
+/* 製作歷程 3：巧思與難度（固定高度，確保各卡片的段落對齊） */
+.craft6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 36px; }
+.cc { background: var(--pale); border-top: 8px solid var(--ink); padding: 20px 26px 22px; }
+.cc h3 { font-size: 30px; line-height: 44px; height: 44px; white-space: nowrap; }
+.cc p { display: block; font-size: 23px; line-height: 34px; margin: 12px 0 0; }
+.cc p b { display: block; width: fit-content; font-size: 18px; line-height: 28px; height: 28px; letter-spacing: 1px; color: var(--pale); padding: 0 10px; margin-bottom: 4px; }
+.cc .hard { height: 100px; overflow: hidden; color: var(--soft); }
 .cc .hard b { background: var(--red); }
-.cc .how { color: var(--ink); font-weight: 700; }
+.cc .how { height: 100px; color: var(--ink); font-weight: 700; }
 .cc .how b { background: var(--teal); }
 
 /* 製作歷程 4：背後的把關（流程架構圖） */
