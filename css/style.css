@@ -65,6 +65,7 @@ h2.big { font-size: clamp(1.6rem, 5vw, 2.3rem); }
 @media (min-width: 860px) { .home-hero { grid-template-columns: 1.05fr .95fr; gap: 3.5rem; min-height: 82vh; } }
 .home-copy .kicker { color: var(--muted); }
 .home-copy h1 { font-size: clamp(3rem, 10vw, 5.4rem); margin: .1em 0 0; font-weight: 800; letter-spacing: -.01em; line-height: 1; }
+.home-copy h1.zh-title { font-size: clamp(2rem, 6.4vw, 3.5rem); line-height: 1.22; letter-spacing: .01em; }
 .home-copy .bar { max-width: 100%; }
 .home-copy .lead { font-size: 1.5rem; font-weight: 700; margin: .2rem 0 .8rem; }
 .home-copy .from { font-size: .9rem; color: var(--muted); border-left: 3px solid #c8c3b8; padding-left: .8rem; }

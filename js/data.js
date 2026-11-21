@@ -1,4 +1,4 @@
-// 《ONE Dentsu》內容資料
+// 《降落在電通，讀懂《決策智慧》》內容資料
 // 所有引文逐字取自《決策智慧 2026》全刊 PDF；頁碼為原刊頁碼。
 // 品牌占比依 2026 各品牌預估人數換算，程式只保存占比，不保存人數。
 
@@ -164,7 +164,7 @@ export const BRANDS = [
     roles: [['轉型顧問', 'consult']] },
 ];
 
-// 第 1 年：所有人都會遇到 People Model（ONE Dentsu 的時刻）
+// 第 1 年：所有人都會遇到 People Model（全集團的時刻）
 export const YEAR1 = {
   title: '第 1 年｜People Model 來敲門',
   body: '明天要提案，你想知道目標族群會不會買單。DSC 做的 People Model 可以讓你先問 AI 消費者分身；你也可以自己去找真人聊。',

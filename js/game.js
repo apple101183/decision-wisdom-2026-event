@@ -300,10 +300,10 @@ function intro() {
     <section class="home-hero">
       <div class="home-copy">
         <p class="kicker">決策智慧 2026｜Agentic Era：重塑品牌與人的真實距離</p>
-        <h1>ONE Dentsu</h1>
+        <h1 class="zh-title">降落在電通，<br>讀懂《決策智慧》</h1>
         <span class="bar"></span>
-        <p class="lead">翻開這本書，你會降落在電通。</p>
-        <p>你會被隨機分發到集團裡的一間公司、一個職務，<br>從報到第一天走到離開，或升上老闆。<br>一路上 AI 會幫你，<br>但每個決定，都由你按下。</p>
+        <p class="lead">翻開這本書，換個職務讀它。</p>
+        <p>你會被隨機分發到集團裡的一間公司、一個職務，<br>從報到第一天走到離開，或升上老闆。<br>一路上 AI 會幫你，<br>但每個決定，都由你來做。</p>
         <p>你在路上遇到的每一個難題，<br>都出自這本書裡 22 篇文章的作者。</p>
         <p class="meta">約 2–3 分鐘・每一關都能展開刊物原文</p>
         <div class="row"><button class="btn primary" id="go">翻開書，報到</button></div>
@@ -311,7 +311,7 @@ function intro() {
       </div>
       <div class="book">
         <figure>
-          <div class="book-inside" aria-hidden="true"><img src="img/ascii.jpg" alt=""><span class="bar"></span><p>ONE Dentsu</p></div>
+          <div class="book-inside" aria-hidden="true"><img src="img/ascii.jpg" alt=""><span class="bar"></span><p>降落在電通</p></div>
           <div class="book-cover"><img src="img/cover.jpg" alt="《決策智慧 2026》封面：素描人像與點陣人像左右並置，下方是彩色的「決策智慧」四字" width="1100" height="1517"></div>
           <figcaption class="book-caption">《決策智慧 2026》封面</figcaption>
         </figure>
@@ -644,7 +644,7 @@ function year1() {
   const y = y1();
   render(`
     ${timeline(2)}
-    <p class="kicker">ONE Dentsu 的時刻</p>
+    <p class="kicker">全集團的時刻</p>
     <h2>${esc(y.title)}</h2>
     <p class="task">${fmt(y.body)}</p>
     ${quoteBlock(y.quote)}

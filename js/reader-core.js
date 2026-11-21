@@ -67,7 +67,7 @@ export async function articleParts(id, q = '') {
 }
 
 // 專有名詞不斷行：dentsu X、Taiwan Dentsu、People Model 這類由多個字組成的名字，整個包成不可拆的單位
-const NAMES = [...new Set([...BRANDS.map((b) => b.name), 'ONE Dentsu', 'People Model', 'Trent Agnew', 'Make Every Impression Count'])]
+const NAMES = [...new Set([...BRANDS.map((b) => b.name), 'People Model', 'Trent Agnew', 'Make Every Impression Count'])]
   .filter((n) => n.includes(' ')).sort((a, b) => b.length - a.length);
 const NAME_RE = new RegExp(`(${NAMES.join('|')})`); // 名稱裡沒有正規表示式的特殊字元
 export function keepNames(root) {
