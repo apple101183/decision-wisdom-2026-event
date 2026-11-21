@@ -12,6 +12,4 @@ html, body { margin: 0; height: 100%; background: #0d0f13; overflow: hidden; }
 .bar-ui button:hover, .bar-ui a:hover, .bar-ui button[aria-pressed="true"] { background: #EFEBE4; color: #15171C; }
 .bar-ui #count { min-width: 4.5em; text-align: center; }
 .bar-ui .play { border-color: #8FD3D6; color: #8FD3D6; }
-#note { position: fixed; left: 50%; bottom: 64px; transform: translateX(-50%); width: min(880px, 92vw); max-height: 34vh; overflow: auto;
-  background: rgba(247, 246, 242, .97); color: #15171C; font: 16px/1.75 "Noto Sans TC", sans-serif; padding: 14px 18px; border-left: 6px solid #1D6B70; z-index: 5; }
 @media (prefers-reduced-motion: reduce) { #deck .rise, #deck .grow { animation: none; } }
