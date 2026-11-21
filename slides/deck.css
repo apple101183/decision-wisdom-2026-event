@@ -183,3 +183,7 @@ p { font-size: 32px; line-height: 1.6; margin: 0; }
 .ask-g { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 32px; margin-top: 8px; }
 .ask-g p { font-size: 23px; line-height: 1.45; }
 .ask-g b { display: inline-block; font-size: 16px; color: var(--ink); background: #8FD3D6; padding: 0 8px; margin-right: 10px; vertical-align: 2px; }
+
+.rhead { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.rmodel { font-size: 22px; font-weight: 700; color: var(--teal); }
+.rmodel span { color: #B5AFA4; margin: 0 6px; }
